@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment # This is a Kubernetes Deployment configuration file for a React application.
+# It defines how to deploy the application in a Kubernetes cluster.
+metadata:
+  name: react-k8s-app
+  labels:
+    app: react-k8s-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react-k8s-app
+  template:
+    metadata:
+      labels:
+        app: react-k8s-app
+    spec:
+      containers:
+      - name: react-k8s-app
+        image: react-k8s-app-di:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+        env:
+        - name: NODE_ENV
+          value: "production"

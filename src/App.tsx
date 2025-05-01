@@ -22,7 +22,7 @@ function App() {
           count is {count}
         </button>
         <p>
-          Build No 1.4.04292025
+          Build No 1.6.05292025
         </p>
       </div>
       <p className="read-the-docs">

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: react-k8s-app-replicaset
+  labels:
+    app: react-k8s-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react-k8s-app
+  template:
+    metadata:
+      labels:
+        app: react-k8s-app
+    spec:
+      containers:
+      - name: react-k8s-app-c
+        image: react-k8s-app-di:latest
+        ports:
+        - containerPort: 80

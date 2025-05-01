@@ -1,5 +1,7 @@
+# This uses multi-stage builds to keep your final image small and production-ready.
 # Stage 1: Build the React app
 FROM node:alpine AS builder
+# Set working directory inside the container
 WORKDIR /client
 # Copy package.json and package-lock.json
 COPY package*.json ./

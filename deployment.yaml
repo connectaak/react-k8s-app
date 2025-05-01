@@ -16,10 +16,10 @@ spec:
         app: react-k8s-app
     spec:
       containers:
-      - name: react-k8s-app
+      - name: react-k8s-app-c
         image: react-k8s-app-di:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         resources:
           limits:
             memory: "128Mi"
